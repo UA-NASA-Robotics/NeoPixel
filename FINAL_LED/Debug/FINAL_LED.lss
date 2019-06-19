@@ -1,0 +1,317 @@
+
+FINAL_LED.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000001fe  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000018a  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000036  00800100  00800100  000001fe  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000001fe  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000230  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000028  00000000  00000000  00000270  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000f61  00000000  00000000  00000298  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000b58  00000000  00000000  000011f9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000003e5  00000000  00000000  00001d51  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000048  00000000  00000000  00002138  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000685  00000000  00000000  00002180  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000055a  00000000  00000000  00002805  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000018  00000000  00000000  00002d5f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   8:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  10:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  14:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  18:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  1c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  20:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  28:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  2c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  30:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  34:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  38:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  3c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  40:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  44:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  48:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  4c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  50:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  54:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  58:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  5c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  60:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  64:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  68:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  6c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  70:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  74:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  78:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d0 e1       	ldi	r29, 0x10	; 16
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+
+00000088 <__do_clear_bss>:
+  88:	21 e0       	ldi	r18, 0x01	; 1
+  8a:	a0 e0       	ldi	r26, 0x00	; 0
+  8c:	b1 e0       	ldi	r27, 0x01	; 1
+  8e:	01 c0       	rjmp	.+2      	; 0x92 <.do_clear_bss_start>
+
+00000090 <.do_clear_bss_loop>:
+  90:	1d 92       	st	X+, r1
+
+00000092 <.do_clear_bss_start>:
+  92:	a6 33       	cpi	r26, 0x36	; 54
+  94:	b2 07       	cpc	r27, r18
+  96:	e1 f7       	brne	.-8      	; 0x90 <.do_clear_bss_loop>
+  98:	0e 94 52 00 	call	0xa4	; 0xa4 <main>
+  9c:	0c 94 c3 00 	jmp	0x186	; 0x186 <_exit>
+
+000000a0 <__bad_interrupt>:
+  a0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a4 <main>:
+//}
+
+
+
+int main(void)
+{
+  a4:	cf 93       	push	r28
+  a6:	df 93       	push	r29
+  a8:	a3 e0       	ldi	r26, 0x03	; 3
+  aa:	b1 e0       	ldi	r27, 0x01	; 1
+  ac:	66 e3       	ldi	r22, 0x36	; 54
+  ae:	71 e0       	ldi	r23, 0x01	; 1
+  b0:	43 e0       	ldi	r20, 0x03	; 3
+  b2:	50 e0       	ldi	r21, 0x00	; 0
+	for(int counter = 1; counter < 18; counter++)
+	{
+	led[counter].r=0;led[counter].g=255;led[counter].b=0;    
+  b4:	df ef       	ldi	r29, 0xFF	; 255
+  b6:	11 96       	adiw	r26, 0x01	; 1
+  b8:	1c 92       	st	X, r1
+  ba:	11 97       	sbiw	r26, 0x01	; 1
+  bc:	dc 93       	st	X, r29
+  be:	12 96       	adiw	r26, 0x02	; 2
+  c0:	1c 92       	st	X, r1
+  c2:	12 97       	sbiw	r26, 0x02	; 2
+void inline ws2812_sendarray_mask(uint8_t *data,uint16_t datlen,uint8_t maskhi)
+{
+  uint8_t curbyte,ctr,masklo;
+  uint8_t sreg_prev;
+  
+  ws2812_DDRREG |= maskhi; // Enable output
+  c4:	25 9a       	sbi	0x04, 5	; 4
+  
+  masklo	=~maskhi&ws2812_PORTREG;
+  c6:	95 b1       	in	r25, 0x05	; 5
+  c8:	9f 7d       	andi	r25, 0xDF	; 223
+  maskhi |=        ws2812_PORTREG;
+  ca:	25 b1       	in	r18, 0x05	; 5
+  cc:	20 62       	ori	r18, 0x20	; 32
+  
+  sreg_prev=SREG;
+  ce:	cf b7       	in	r28, 0x3f	; 63
+  cli();  
+  d0:	f8 94       	cli
+		
+  while (datlen--) {
+  d2:	41 15       	cp	r20, r1
+  d4:	51 05       	cpc	r21, r1
+  d6:	a9 f0       	breq	.+42     	; 0x102 <loop191+0x22>
+  d8:	e0 e0       	ldi	r30, 0x00	; 0
+  da:	f1 e0       	ldi	r31, 0x01	; 1
+    curbyte=*data++;
+  dc:	81 91       	ld	r24, Z+
+
+    "       dec   %0    \n\t"    //  '1' [+2] '0' [+2]
+    "       brne  loop%=\n\t"    //  '1' [+3] '0' [+4]
+    :	"=&d" (ctr)
+    :	"r" (curbyte), "I" (_SFR_IO_ADDR(ws2812_PORTREG)), "r" (maskhi), "r" (masklo)
+    );
+  de:	38 e0       	ldi	r19, 0x08	; 8
+
+000000e0 <loop191>:
+  e0:	25 b9       	out	0x05, r18	; 5
+  e2:	00 00       	nop
+  e4:	00 c0       	rjmp	.+0      	; 0xe6 <loop191+0x6>
+  e6:	87 ff       	sbrs	r24, 7
+  e8:	95 b9       	out	0x05, r25	; 5
+  ea:	88 0f       	add	r24, r24
+  ec:	00 00       	nop
+  ee:	00 c0       	rjmp	.+0      	; 0xf0 <loop191+0x10>
+  f0:	00 c0       	rjmp	.+0      	; 0xf2 <loop191+0x12>
+  f2:	00 c0       	rjmp	.+0      	; 0xf4 <loop191+0x14>
+  f4:	95 b9       	out	0x05, r25	; 5
+  f6:	00 c0       	rjmp	.+0      	; 0xf8 <loop191+0x18>
+  f8:	3a 95       	dec	r19
+  fa:	91 f7       	brne	.-28     	; 0xe0 <loop191>
+  maskhi |=        ws2812_PORTREG;
+  
+  sreg_prev=SREG;
+  cli();  
+		
+  while (datlen--) {
+  fc:	ea 17       	cp	r30, r26
+  fe:	fb 07       	cpc	r31, r27
+ 100:	69 f7       	brne	.-38     	; 0xdc <main+0x38>
+    :	"=&d" (ctr)
+    :	"r" (curbyte), "I" (_SFR_IO_ADDR(ws2812_PORTREG)), "r" (maskhi), "r" (masklo)
+    );
+  }
+  
+  SREG=sreg_prev;
+ 102:	cf bf       	out	0x3f, r28	; 63
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 104:	8f ea       	ldi	r24, 0xAF	; 175
+ 106:	94 e0       	ldi	r25, 0x04	; 4
+ 108:	01 97       	sbiw	r24, 0x01	; 1
+ 10a:	f1 f7       	brne	.-4      	; 0x108 <loop191+0x28>
+ 10c:	00 c0       	rjmp	.+0      	; 0x10e <loop191+0x2e>
+ 10e:	00 00       	nop
+void inline ws2812_sendarray_mask(uint8_t *data,uint16_t datlen,uint8_t maskhi)
+{
+  uint8_t curbyte,ctr,masklo;
+  uint8_t sreg_prev;
+  
+  ws2812_DDRREG |= maskhi; // Enable output
+ 110:	26 9a       	sbi	0x04, 6	; 4
+  
+  masklo	=~maskhi&ws2812_PORTREG;
+ 112:	95 b1       	in	r25, 0x05	; 5
+ 114:	9f 7b       	andi	r25, 0xBF	; 191
+  maskhi |=        ws2812_PORTREG;
+ 116:	25 b1       	in	r18, 0x05	; 5
+ 118:	20 64       	ori	r18, 0x40	; 64
+  
+  sreg_prev=SREG;
+ 11a:	cf b7       	in	r28, 0x3f	; 63
+  cli();  
+ 11c:	f8 94       	cli
+		
+  while (datlen--) {
+ 11e:	41 15       	cp	r20, r1
+ 120:	51 05       	cpc	r21, r1
+ 122:	a9 f0       	breq	.+42     	; 0x14e <loop263+0x22>
+ 124:	e0 e0       	ldi	r30, 0x00	; 0
+ 126:	f1 e0       	ldi	r31, 0x01	; 1
+    curbyte=*data++;
+ 128:	81 91       	ld	r24, Z+
+
+    "       dec   %0    \n\t"    //  '1' [+2] '0' [+2]
+    "       brne  loop%=\n\t"    //  '1' [+3] '0' [+4]
+    :	"=&d" (ctr)
+    :	"r" (curbyte), "I" (_SFR_IO_ADDR(ws2812_PORTREG)), "r" (maskhi), "r" (masklo)
+    );
+ 12a:	38 e0       	ldi	r19, 0x08	; 8
+
+0000012c <loop263>:
+ 12c:	25 b9       	out	0x05, r18	; 5
+ 12e:	00 00       	nop
+ 130:	00 c0       	rjmp	.+0      	; 0x132 <loop263+0x6>
+ 132:	87 ff       	sbrs	r24, 7
+ 134:	95 b9       	out	0x05, r25	; 5
+ 136:	88 0f       	add	r24, r24
+ 138:	00 00       	nop
+ 13a:	00 c0       	rjmp	.+0      	; 0x13c <loop263+0x10>
+ 13c:	00 c0       	rjmp	.+0      	; 0x13e <loop263+0x12>
+ 13e:	00 c0       	rjmp	.+0      	; 0x140 <loop263+0x14>
+ 140:	95 b9       	out	0x05, r25	; 5
+ 142:	00 c0       	rjmp	.+0      	; 0x144 <loop263+0x18>
+ 144:	3a 95       	dec	r19
+ 146:	91 f7       	brne	.-28     	; 0x12c <loop263>
+  maskhi |=        ws2812_PORTREG;
+  
+  sreg_prev=SREG;
+  cli();  
+		
+  while (datlen--) {
+ 148:	ea 17       	cp	r30, r26
+ 14a:	fb 07       	cpc	r31, r27
+ 14c:	69 f7       	brne	.-38     	; 0x128 <loop191+0x48>
+    :	"=&d" (ctr)
+    :	"r" (curbyte), "I" (_SFR_IO_ADDR(ws2812_PORTREG)), "r" (maskhi), "r" (masklo)
+    );
+  }
+  
+  SREG=sreg_prev;
+ 14e:	cf bf       	out	0x3f, r28	; 63
+ 150:	8f ea       	ldi	r24, 0xAF	; 175
+ 152:	94 e0       	ldi	r25, 0x04	; 4
+ 154:	01 97       	sbiw	r24, 0x01	; 1
+ 156:	f1 f7       	brne	.-4      	; 0x154 <loop263+0x28>
+ 158:	00 c0       	rjmp	.+0      	; 0x15a <loop263+0x2e>
+ 15a:	00 00       	nop
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 15c:	9f ef       	ldi	r25, 0xFF	; 255
+ 15e:	29 e6       	ldi	r18, 0x69	; 105
+ 160:	88 e1       	ldi	r24, 0x18	; 24
+ 162:	91 50       	subi	r25, 0x01	; 1
+ 164:	20 40       	sbci	r18, 0x00	; 0
+ 166:	80 40       	sbci	r24, 0x00	; 0
+ 168:	e1 f7       	brne	.-8      	; 0x162 <loop263+0x36>
+ 16a:	00 c0       	rjmp	.+0      	; 0x16c <loop263+0x40>
+ 16c:	00 00       	nop
+ 16e:	13 96       	adiw	r26, 0x03	; 3
+ 170:	4d 5f       	subi	r20, 0xFD	; 253
+ 172:	5f 4f       	sbci	r21, 0xFF	; 255
+
+
+
+int main(void)
+{
+	for(int counter = 1; counter < 18; counter++)
+ 174:	a6 17       	cp	r26, r22
+ 176:	b7 07       	cpc	r27, r23
+ 178:	09 f0       	breq	.+2      	; 0x17c <loop263+0x50>
+ 17a:	9d cf       	rjmp	.-198    	; 0xb6 <main+0x12>
+	{
+	led[counter].r=0;led[counter].g=255;led[counter].b=0;    
+	ws2812_setleds(led,counter);                        // wait for 500ms.
+	_delay_ms(500);
+	}
+}
+ 17c:	80 e0       	ldi	r24, 0x00	; 0
+ 17e:	90 e0       	ldi	r25, 0x00	; 0
+ 180:	df 91       	pop	r29
+ 182:	cf 91       	pop	r28
+ 184:	08 95       	ret
+
+00000186 <_exit>:
+ 186:	f8 94       	cli
+
+00000188 <__stop_program>:
+ 188:	ff cf       	rjmp	.-2      	; 0x188 <__stop_program>
